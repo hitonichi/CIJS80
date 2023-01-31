@@ -1,9 +1,14 @@
 import './App.css';
 import Card from './components/Card';
+import CardHeader from './components/CardHeader';
+import CardBody from './components/CardBody';
 
 function App() {
   return (
-    <Card></Card>
+    <Card>
+      <CardHeader title={'Đăng nhập'}></CardHeader>
+      <CardBody></CardBody>
+    </Card>
   );
 }
 

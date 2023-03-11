@@ -1,5 +1,8 @@
 import { useContext } from "react"
 import { CartContext } from "../CartContext"
+import FontAwesome from 'react-fontawesome'
+import faStyles from 'font-awesome/css/font-awesome.css'
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const Cart = ({
     toggleModal,
@@ -11,10 +14,10 @@ const Cart = ({
 
     return (
         <div className="cart-container">
-            <div className="btn btn-primary d-flex rounded-pill gap-2 fw-bold text-light" onClick={toggleModal}>
+            <div className=" btn d-flex rounded-pill gap-2 fw-bold text-primary cart-btn" onClick={toggleModal}>
                 <div 
                     className=""
-                >Open Cart</div>
+                >Your Cart</div>
                 <div className="bg-danger rounded-circle px-2">{quantity}</div>
             </div>
         </div>

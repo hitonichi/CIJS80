@@ -2,12 +2,23 @@
   text-align: center;
 }
 
-:root {
-  --bs-secondary: #F1A661;
-}
-
 body::-webkit-scrollbar {
   display: none;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.title {
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .App-header {
@@ -56,8 +67,8 @@ body::-webkit-scrollbar {
   background-color: gainsboro;
   padding: 1em;
   border-radius: 1em;
-  box-shadow: 0 0 1em gray;
   margin: 2em;
+  margin-bottom: 0em;
 }
 
 .meals-container {
@@ -65,7 +76,6 @@ body::-webkit-scrollbar {
   background-color: antiquewhite;
   border-radius: 1em;
   padding: 1em;
-  box-shadow: 0 0 1em gray;
   margin: 2em;
 }
 
@@ -85,6 +95,8 @@ body::-webkit-scrollbar {
   top: 0;
   left: 0;
   position: fixed;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
 }
 
 .Modal-overlay {
@@ -109,6 +121,10 @@ body::-webkit-scrollbar {
   overflow: auto;
 }
 
+.modal-meal-list {
+  overflow-y: scroll;
+}
+
 .cart-meal-container {
   display: flex;
   align-items: center;
@@ -130,6 +146,10 @@ body::-webkit-scrollbar {
   gap: .3em;
 }
 
+.order-form {
+  overflow-y: auto;
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .meals-container, .about {
@@ -143,6 +163,14 @@ body::-webkit-scrollbar {
 
   .Modal-content {
     width: 90%;
+  }
+
+  .active-modal {
+    overflow-y: auto;
+  }
+
+  .order-form {
+    overflow: initial;
   }
 }
 
@@ -185,6 +213,7 @@ body::-webkit-scrollbar {
   font-weight: bold;
   font-size: 1.2em;
   margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .input-is-invalid {
